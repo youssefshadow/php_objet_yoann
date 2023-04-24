@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+  }
+/* CSS pour le formulaire */
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0062cc;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  
+
+
+
+
+  header{
+    background-color: #3C486B;
+  }
+
+  nav {
+    width: 90%;
+    /* position: fixed; */
+    background-color: #3C486B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    color: #fff;
+ 
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-family: 'Orbitron', serif;
+    letter-spacing: 1px;
+  }
+  
+  nav a:hover {
+    background-color: #BAD7E9;
+    border-radius: 5%;
+    color: #00235B;
+  }
+  .logo:hover{
+    background-color: transparent;
+  }
+  
+  .userPic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+
+  .hero {
+    /* background-image: url('./asset/images/croisson.jpeg'); */
+    background-color: #6DA9E4;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-family: 'Montserrat',sans-serif;
+    
+    
+
+  }
+  
+  .hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: black;
+    font-family: 'Montserrat',sans-serif;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #D6E4E5;
+    color: #333;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+    font-family: 'Orbitron', serif;
+  }
+  
+  .btn:hover {
+    background-color: #0B2447;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+
+  footer {
+   background-color: #00235B;
+    color: #fff;
+    padding: 1rem;
+    font-family: 'Montserrat',sans-serif;
+  }
