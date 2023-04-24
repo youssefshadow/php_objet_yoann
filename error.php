@@ -1,4 +1,4 @@
 <?php
-    echo 'Erreur 404';
+    echo '<h1>Erreur 404 🤬</h1>' ;
    
 ?>

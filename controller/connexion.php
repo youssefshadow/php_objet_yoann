@@ -1,6 +1,8 @@
 <?php
  include './model/joueur.php';
  include './utils/functions.php';
+ include './view/view_navbar.php';
+ include './view/view_connexion.php';
  
 
     
@@ -34,21 +36,18 @@
                 header('Location: ./');
                
             } else {
-                echo '<h1>Mot de passe incorrect.</h1>';
-                //version sécurisé:
-                //echo '<h1>mot de passe ou idientifiant incorrect .</h1>';
+               
+                echo '<h1>mot de passe ou idientifiant incorrect .</h1>';
             }
         } else {
-            echo '<h1>Aucun joueur trouvé pour ce mail.</h1>';
-            //version sécurisé:
-            //echo '<h1>mot de passe ou idientifiant incorrect .</h1>';
+           
+            echo '<h1>mot de passe ou idientifiant incorrect .</h1>';
             
         }
     }
 
     $message ="";
    
-    include './view/view_navbar.php';
-    include './view/view_connexion.php';
+   
    
 ?>
