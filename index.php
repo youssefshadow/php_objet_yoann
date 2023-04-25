@@ -1,5 +1,8 @@
 <?php
+    
+
     include './utils/connectBdd.php';
+
     //utilisation de session_start(pour gérer la connexion au serveur)
     session_start();
     //Analyse de l'URL avec parse_url() et retourne ses composants
@@ -22,6 +25,9 @@
             break;
         case '/tp_yoann/test':
             include './test.php';
+            break;
+        case '/tp_yoann/show':
+            include './controller/affichagePerso.php';
             break;
         case '/tp_yoann/deconexion':
             include './controller/deconexion.php';

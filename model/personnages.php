@@ -97,6 +97,13 @@ class Personnage {
             die('Erreur : '.$e->getMessage());
         }
     }
+    // méthode pour sélectionner tous les joueurs
+    public static function selectAll($bdd) {
+        $query = 'SELECT * FROM personnage';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
         // Méthode pour récupérer tous les personnage d'un joueur
         public static function getpersonnageJoueur($bdd, $idJoueur) {

@@ -13,8 +13,10 @@ form {
     margin: 50px auto;
     padding: 20px;
     background-color: #f2f2f2;
+    background-color: #FFF8E1;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
   }
   
   input[type="text"],
@@ -36,6 +38,7 @@ form {
     border: none;
     border-radius: 5px;
     background-color: #007bff;
+    background-color: #FF6969;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -58,6 +61,7 @@ form {
 
   header{
     background-color: #3C486B;
+   
   }
 
   nav {
@@ -74,6 +78,7 @@ form {
   }
   
   nav a {
+    position: relative;
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
@@ -82,13 +87,30 @@ form {
   }
   
   nav a:hover {
+    /* border-bottom: solid 2px #BAD7E9; */
+    color: #BAD7E9;
+  }
+
+  nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
     background-color: #BAD7E9;
-    border-radius: 5%;
-    color: #00235B;
+    animation: animate-border 0.5s ease-in-out forwards;
   }
-  .logo:hover{
-    background-color: transparent;
+  
+  @keyframes animate-border {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
   }
+
   
   .userPic {
     width: 40px;
@@ -100,7 +122,7 @@ form {
 
   .hero {
     /* background-image: url('./asset/images/croisson.jpeg'); */
-    background-color: #6DA9E4;
+    background-color: #D4FAFC;
     background-size: cover;
     background-position: center;
     height: 100vh;

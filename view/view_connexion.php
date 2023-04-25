@@ -1,11 +1,7 @@
 
 
 
-<style>
-    <?php 
-        include './asset/style/style.css'; 
-    ?>
-</style>
+
 
 <h1>Connexion</h1>
 <form action="" method="post" enctype="multipart/form-data">
@@ -19,3 +15,9 @@
     <button type="submit" name="connexion">Connexion</button>
   </div>
 </form>
+
+<style>
+    <?php 
+        include './asset/style/style.css'; 
+    ?>
+</style>

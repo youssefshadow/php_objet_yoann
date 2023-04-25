@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
  include './model/joueur.php';
  include './utils/functions.php';
  include './view/view_navbar.php';
@@ -32,8 +35,7 @@
                 $_SESSION['pseudo'] = $result[0]['pseudo_joueur'];
                 $_SESSION['mail'] = $result[0]['mail_joueur'];
 
-                // Redirection vers la page d'accueil
-                header('Location: ./');
+                 header('Location: ./');
                
             } else {
                

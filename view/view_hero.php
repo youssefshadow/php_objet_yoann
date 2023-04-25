@@ -15,7 +15,7 @@
 <body>
   <section class="hero">
   <div class="hero-content">
-    <h1>Gamer party <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-player-battle-royale-flaticons-lineal-color-flat-icons-3.png"/> </h1>
+    <h1>Create your characters and fight in the arena  <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-player-battle-royale-flaticons-lineal-color-flat-icons-3.png"/> </h1>
     <p>go ahead and headshot</p>
     <a href="#" class="btn">Start gaming</a>
   </div>
