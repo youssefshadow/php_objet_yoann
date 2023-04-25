@@ -11,12 +11,15 @@
         case '/tp_yoann/':
             include './home.php';
             break;
-            case '/tp_yoann/createUser':
-        include './controller/add_user.php';
+        case '/tp_yoann/createUser':
+            include './controller/add_user.php';
             break;
             case '/tp_yoann/connexion':
                 include './controller/connexion.php';
                 break; 
+        case '/tp_yoann/createPerso':
+            include './controller/add_personnage.php';
+            break;
         case '/tp_yoann/test':
             include './test.php';
             break;

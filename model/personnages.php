@@ -84,7 +84,7 @@ class Personnage {
             $attaque = $this->getAttaque();
             $defense = $this->getDefense();
             $idJoueur = $this->getIdJoueur();
-            $req = $bdd->prepare("INSERT INTO personnages(nom_personnage, classe_personnage, pv_personnage, attaque_personnage, defense_personnage, id_joueur) VALUES(?, ?, ?, ?, ?, ?)");
+            $req = $bdd->prepare("INSERT INTO personnage(nom_perso, classe_personnage, pv_personnage, attaque_personnage, defense_personnage, id_joueeur) VALUES(?, ?, ?, ?, ?, ?)");
             $req->bindParam(1, $nom, PDO::PARAM_STR);
             $req->bindParam(2, $classe, PDO::PARAM_STR);
             $req->bindParam(3, $pv, PDO::PARAM_INT);
@@ -98,5 +98,95 @@ class Personnage {
         }
     }
 
-}
-?>
+        // Méthode pour récupérer tous les personnage d'un joueur
+        public static function getpersonnageJoueur($bdd, $idJoueur) {
+            try {
+                $req = $bdd->prepare("SELECT * FROM personnage WHERE id_joueur = ?");
+                $req->bindParam(1, $idJoueur, PDO::PARAM_INT);
+                $req->execute();
+                $result = $req->fetchAll(PDO::FETCH_ASSOC);
+                $personnage = array();
+                foreach ($result as $row) {
+                    $personnage = new Personnage($row['nom_personnage'], $row['classe_personnage'], $row['pv_personnage'], $row['attaque_personnage'], $row['defense_personnage'], $row['id_joueur']);
+                    $personnage->setId($row['id_personnage']);
+                    array_push($personnage, $personnage);
+                }
+                return $personnage;
+            } catch (Exception $e) {
+                die('Erreur : '.$e->getMessage());
+            }
+        }
+        
+        // Méthode pour récupérer un personnage à partir de son ID
+        public static function getPersonnageById($bdd, $idPersonnage) {
+            try {
+                $req = $bdd->prepare("SELECT * FROM personnage WHERE id_personnage = ?");
+                $req->bindParam(1, $idPersonnage, PDO::PARAM_INT);
+                $req->execute();
+                $result = $req->fetch(PDO::FETCH_ASSOC);
+        
+                $personnage = new Personnage($result['nom_personnage'], $result['classe_personnage'], $result['pv_personnage'], $result['attaque_personnage'], $result['defense_personnage'], $result['id_joueur']);
+                $personnage->setId($result['id_personnage']);
+                return $personnage;
+            } catch (Exception $e) {
+                die('Erreur : '.$e->getMessage());
+            }
+        }
+        
+        // Méthode pour mettre à jour un personnage dans la base de données
+        public function updatePersonnage($bdd) {
+            try {
+                $id = $this->getId();
+                $nom = $this->getNom();
+                $classe = $this->getClasse();
+                $pv = $this->getPv();
+                $attaque = $this->getAttaque();
+                $defense = $this->getDefense();
+                $idJoueur = $this->getIdJoueur();
+                $req = $bdd->prepare("UPDATE personnage SET nom_personnage = ?, classe_personnage = ?, pv_personnage = ?, attaque_personnage = ?, defense_personnage = ?, id_joueur = ? WHERE id_personnage = ?");
+                $req->bindParam(1, $nom, PDO::PARAM_STR);
+                $req->bindParam(2, $classe, PDO::PARAM_STR);
+                $req->bindParam(3, $pv, PDO::PARAM_INT);
+                $req->bindParam(4, $attaque, PDO::PARAM_INT);
+                $req->bindParam(5, $defense, PDO::PARAM_INT);
+                $req->bindParam(6, $idJoueur, PDO::PARAM_INT);
+                $req->bindParam(7, $id, PDO::PARAM_INT);
+                $req->execute();
+                return true;
+            } catch (Exception $e) {
+                die('Erreur : '.$e->getMessage());
+            }
+        }
+        
+        // Méthode pour supprimer un personnage de la base de données
+        public static function deletePersonnage($bdd, $idPersonnage) {
+            try {
+                $req = $bdd->prepare("DELETE FROM personnage WHERE id_personnage = ?");
+                $req->bindParam(1, $idPersonnage, PDO::PARAM_INT);
+                $req->execute();
+                return true;
+            } catch (Exception $e) {
+                die('Erreur : '.$e
+                ->getMessage());
+    }
+    }
+    
+    
+    
+    // Méthode pour récupérer tous les personnage dans la base de données
+    public static function getpersonnage($bdd) {
+    try {
+    $req = $bdd->prepare("SELECT * FROM personnage");
+    $req->execute();
+    $personnage = array();
+    while ($donnees = $req->fetch(PDO::FETCH_ASSOC)) {
+    $personnage = new Personnage($donnees['nom_personnage'], $donnees['classe_personnage'], $donnees['pv_personnage'], $donnees['attaque_personnage'], $donnees['defense_personnage'], $donnees['id_joueur']);
+    $personnage->setId($donnees['id_personnage']);
+    array_push($personnage, $personnage);
+    }
+    return $personnage;
+    } catch (Exception $e) {
+    die('Erreur : '.$e->getMessage());
+    }
+    }
+}    
