@@ -13,7 +13,7 @@
         <label for="nom_personnage">Nom :</label>
         <input type="text" name="nom_personnage" id="nom_personnage" required><br>
         
-        <label for="classe_personnage">Classe :</label>
+        <label for="classe_personnage">Type :</label>
         <input type="text" name="classe_personnage" id="classe_personnage" required><br>
         
         <label for="pv_personnage">PV :</label>
@@ -28,4 +28,6 @@
         <button type="submit" name="submit">Ajouter Personnage</button>
     </form>
 </body>
+
+
 </html>
