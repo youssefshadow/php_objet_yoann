@@ -6,7 +6,7 @@
         <span><a href="./">Accueil</a></span>
 
         <?php if (isset($_SESSION['connected'])): ?>
-            <span><a href="./show">Arcade</a></span>
+            <span><a href="./show">Personages</a></span>
             <span><a href="./createPerso">Ajouter Un Personnage</a></span>
             <span><a href="./deconexion">Déconnexion</a></span>
         <?php else: ?>

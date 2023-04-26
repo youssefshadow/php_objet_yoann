@@ -20,6 +20,6 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
     $mesJoueurs = Personnage::selectAll($bdd);
 }
 
-// Afficher les personnages
+
 include './view/view_showJoueur.php';
 ?>

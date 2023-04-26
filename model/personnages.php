@@ -8,7 +8,7 @@ class Personnage {
     private $defense;
     private $idJoueur;
 
-    public function __construct() {
+    public function __construct($nom, $classe, $pv, $attaque, $defense, $idJoueur) {
         $this->nom = $nom;
         $this->classe = $classe;
         $this->pv = $pv;
@@ -150,7 +150,7 @@ class Personnage {
                 $attaque = $this->getAttaque();
                 $defense = $this->getDefense();
                 $idJoueur = $this->getIdJoueur();
-                $req = $bdd->prepare("UPDATE personnage SET nom_personnage = ?, classe_personnage = ?, pv_personnage = ?, attaque_personnage = ?, defense_personnage = ?, id_joueur = ? WHERE id_personnage = ?");
+                $req = $bdd->prepare("UPDATE personnage SET nom_perso = ?, classe_personnage = ?, pv_personnage = ?, attaque_personnage = ?, defense_personnage = ?, id_joueur = ? WHERE id_personnage = ?");
                 $req->bindParam(1, $nom, PDO::PARAM_STR);
                 $req->bindParam(2, $classe, PDO::PARAM_STR);
                 $req->bindParam(3, $pv, PDO::PARAM_INT);

@@ -52,10 +52,15 @@ form {
     border: none;
     border-radius: 5px;
     background-color: #569DAA;
-    
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    
+  }
+  .btn_annul:hover{
+    background-color: #FF6969;
+ 
   }
   
   label {
@@ -228,6 +233,8 @@ form {
   .card-content h3 {
     font-size: 24px;
     margin: 0;
+    font-family: 'Orbitron', serif;
+    color: #007bff;
   }
   
   .card-content p {
@@ -244,10 +251,12 @@ form {
   .card-content ul li {
     font-size: 16px;
     margin-bottom: 5px;
+    font-family: 'Montserrat',sans-serif;
   }
   
   .card-content ul li span {
     font-weight: bold;
     margin-left: 10px;
+    color: #00235B;
   }
   
