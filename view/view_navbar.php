@@ -1,4 +1,11 @@
+<script>
+         <?php 
+        include './asset/script/script.js'; 
+    ?>
+    </script>
+
 <header>
+   
     <nav>
         <a class="logo" href="./">
             <img src="<?php echo isset($_SESSION['connected']) ? 'https://img.icons8.com/bubbles/50/null/joy-con.png' : 'https://img.icons8.com/bubbles/50/null/controller.png'; ?>"/>
@@ -8,7 +15,7 @@
         <?php if (isset($_SESSION['connected'])): ?>
             <span><a href="./show">Personages</a></span>
             <span><a href="./createPerso">Ajouter Un Personnage</a></span>
-            <span><a href="./deconexion">Déconnexion</a></span>
+            <span><a href="./deconexion"><img class="signOutBtn" src="https://img.icons8.com/dusk/64/null/logout-rounded-down--v1.png"/></a></span>
         <?php else: ?>
             <span><a href="./createUser">Ajouter utilisateur</a></span>
             <span><a href="./connexion">Connexion</a></span>

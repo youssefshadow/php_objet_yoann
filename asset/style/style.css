@@ -76,6 +76,9 @@ form {
 
   header{
     background-color: #3C486B;
+    position: fixed;
+ 
+    width: 100%;
    
   }
 
@@ -115,6 +118,10 @@ form {
     height: 2px;
     background-color: #BAD7E9;
     animation: animate-border 0.5s ease-in-out forwards;
+  }
+  .signOutBtn{
+    width: 30px;
+    height: 30px;
   }
   
   @keyframes animate-border {
