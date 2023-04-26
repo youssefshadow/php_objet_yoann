@@ -8,7 +8,7 @@ class Personnage {
     private $defense;
     private $idJoueur;
 
-    public function __construct($nom, $classe, $pv, $attaque, $defense, $idJoueur) {
+    public function __construct() {
         $this->nom = $nom;
         $this->classe = $classe;
         $this->pv = $pv;
@@ -114,7 +114,7 @@ class Personnage {
                 $result = $req->fetchAll(PDO::FETCH_ASSOC);
                 $personnage = array();
                 foreach ($result as $row) {
-                    $personnage = new Personnage($row['nom_personnage'], $row['classe_personnage'], $row['pv_personnage'], $row['attaque_personnage'], $row['defense_personnage'], $row['id_joueur']);
+                    $personnage = new Personnage($row['nom_perso'], $row['classe_personnage'], $row['pv_personnage'], $row['attaque_personnage'], $row['defense_personnage'], $row['id_joueur']);
                     $personnage->setId($row['id_personnage']);
                     array_push($personnage, $personnage);
                 }
@@ -196,4 +196,13 @@ class Personnage {
     die('Erreur : '.$e->getMessage());
     }
     }
+    public static function selectByName($bdd, $nom) {
+        $query = 'SELECT * FROM personnage WHERE nom = :nom';
+        $stmt = $bdd->prepare($query);
+        $stmt->execute(['nom' => $nom]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+
+
 }    
