@@ -11,15 +11,6 @@ $bdd = $connexion->connexion();
 $mesJoueurs = Personnage::selectAll($bdd);
 
 // Afficher les personnages
-echo "Liste des personnages : <br>";
-
-foreach ($mesJoueurs as $joueur) {
-    echo "Blaze : " . $joueur['nom_perso'] . "<br>";
-    echo "Type : " . $joueur['classe_personnage'] . "<br>";
-    echo "Attaque : " . $joueur['attaque_personnage'] . "<br>";
-    echo "defense : " . $joueur['defense_personnage'] . "<br>";
-    echo "---------------<br>";
-}
-
+include './view/view_showJoueur.php'
 
 ?>
