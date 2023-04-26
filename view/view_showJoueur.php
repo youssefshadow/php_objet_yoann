@@ -8,7 +8,7 @@
 <body>
 
 
-    <div class="container">
+    <div class="containerForm">
         <form action="#" method="get" class="search-form">
             <input type="text" name="search" placeholder="Rechercher par nom...">
             <button type="submit">Rechercher</button>

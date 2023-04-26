@@ -77,6 +77,8 @@ form {
   header{
     background-color: #3C486B;
     position: fixed;
+    top: 0;
+    left: 0;
  
     width: 100%;
    
@@ -143,7 +145,6 @@ form {
   
 
   .hero {
-    /* background-image: url('./asset/images/croisson.jpeg'); */
     background-color: #D4FAFC;
     background-size: cover;
     background-position: center;
@@ -174,6 +175,13 @@ form {
     color: black;
     font-family: 'Montserrat',sans-serif;
   }
+  .hero-content h1 span {
+    display: inline-block;
+    width: 0.6em;
+    text-align: center;
+    white-space: normal;
+  }
+  
   
   .btn {
     display: inline-block;
@@ -192,6 +200,28 @@ form {
     color: #fff;
     transform: scale(1.1);
   }
+
+  .typewriter {
+    overflow: hidden; 
+    border-right: 0.15em solid black; 
+    white-space: nowrap; 
+    letter-spacing: 0.15em; 
+    animation: 
+      typing 4s steps(30, end) 1s 1 normal both, 
+      blink-caret 0.75s step-end infinite; 
+    font-size: 4rem;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+  
   
 
   footer {
@@ -265,5 +295,8 @@ form {
     font-weight: bold;
     margin-left: 10px;
     color: #00235B;
+  }
+  .containerForm{
+    padding-top: 50px;
   }
   

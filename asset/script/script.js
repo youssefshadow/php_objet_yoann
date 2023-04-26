@@ -11,13 +11,22 @@ window.addEventListener('scroll', function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const heroTitle = document.querySelector('.hero-content a');
+  const heroTitleText = heroTitle.innerText;
+  let i = 0;
+  heroTitle.innerText = '';
 
-
-
-
-
-
-
+  function typeWriter() {
+    if (i < heroTitleText.length) {
+      heroTitle.innerText += heroTitleText.charAt(i);
+      i++;
+      setTimeout(typeWriter, 50);
+    }
+  }
+  
+  typeWriter();
+});
 
 
 
