@@ -2,7 +2,7 @@
 include './model/personnages.php';
 include './model/joueur.php';
 include './view/view_navbar.php';
-
+//connexion à la bdd
 $connexion = new Connexion();
 $bdd = $connexion->connexion();
 
