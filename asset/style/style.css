@@ -47,6 +47,16 @@ form {
   button[type="submit"]:hover {
     background-color: #0062cc;
   }
+  .btn_annul{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #569DAA;
+    
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
   
   label {
     display: inline-block;

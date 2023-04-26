@@ -197,10 +197,19 @@ class Personnage {
     }
     }
     public static function selectByName($bdd, $nom) {
-        $query = 'SELECT * FROM personnage WHERE nom = :nom';
+        $query = 'SELECT * FROM personnage WHERE nom_perso LIKE :name ORDER BY nom_perso';
         $stmt = $bdd->prepare($query);
-        $stmt->execute(['nom' => $nom]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->bindValue(':name', "%$nom%");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function selectPersoByName($bdd, $nom) {
+        
+        $query = 'SELECT * FROM personnage WHERE nom_perso LIKE :name ORDER BY nom_perso';
+        $stmt = $bdd->prepare($query);
+        $stmt->bindValue(':name', "%$name%");
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
     
 
