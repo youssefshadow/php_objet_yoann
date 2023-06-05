@@ -30,6 +30,7 @@ ob_start();
             if (password_verify($password, $db_password)) { 
 
                 // Enregistrement des données joueur dans la session
+                //stocker ID utilisateur pour s'en servir 
                 $_SESSION['connected'] = true;
                 $_SESSION['id'] = $result[0]['id_joueur'];
                 $_SESSION['pseudo'] = $result[0]['pseudo_joueur'];
